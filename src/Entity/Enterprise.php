@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +43,16 @@ class Enterprise
      * @ORM\Column(type="integer", nullable=true)
      */
     private $workforce;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\JobOffer", mappedBy="enterprise")
+     */
+    private $jobOffers;
+
+    public function __construct()
+    {
+        $this->jobOffers = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -103,6 +115,37 @@ class Enterprise
     public function setWorkforce(?int $workforce): self
     {
         $this->workforce = $workforce;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|JobOffer[]
+     */
+    public function getJobOffers(): Collection
+    {
+        return $this->jobOffers;
+    }
+
+    public function addJobOffer(JobOffer $jobOffer): self
+    {
+        if (!$this->jobOffers->contains($jobOffer)) {
+            $this->jobOffers[] = $jobOffer;
+            $jobOffer->setEnterprise($this);
+        }
+
+        return $this;
+    }
+
+    public function removeJobOffer(JobOffer $jobOffer): self
+    {
+        if ($this->jobOffers->contains($jobOffer)) {
+            $this->jobOffers->removeElement($jobOffer);
+            // set the owning side to null (unless already changed)
+            if ($jobOffer->getEnterprise() === $this) {
+                $jobOffer->setEnterprise(null);
+            }
+        }
 
         return $this;
     }
