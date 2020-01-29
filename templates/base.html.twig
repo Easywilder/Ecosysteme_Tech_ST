@@ -3,38 +3,61 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+        <link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            <nav class = "navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#"> <span style = "vertical-align: inherit;"> <span style = "vertical-align: inherit;"> Navbar </span>
+                    </span>
+                </a>
+                <button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "# navbarColor03"
+                        aria-controls = "navbarColor03" aria-extended = "false" aria-label = "Basculer la navigation ">
+                    <span class = "navbar-toggler-icon"> </span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarColor02">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <div class = "collapse navbar-collapse" id = "navbarColor03">
+                    <ul class = "navbar-nav mr-auto">
+                        <li class = "nav-item active">
+                            <a class="nav-link" href="#">
+                                <span style = "vertical-align: inherit;">
+                                    <span style = "vertical-align: inherit;">Entreprises</span>
+                                </span>
+                                <span class = "sr-only"> <span style = "vertical-align: inherit;">
+                                        <span style = "vertical-align: inherit;"> (actuel) </span>
+                                    </span>
+                                </span >
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                        <li class = "nav-item">
+                            <a class="nav-link" href="#">
+                                <span style = "vertical-align: inherit;"> <span style = "vertical-align: inherit;">Postes</span>
+                                </span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                        <li class = "nav-item">
+                            <a class="nav-link" href="#"> <span style = "vertical-align: inherit;">
+                                    <span style = "vertical-align: inherit;">Techno</span>
+                                </span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                        <li class = "nav-item">
+                            <a class="nav-link" href="#"> <span style = "vertical-align: inherit;">
+                                    <span style = "vertical-align: inherit;">Secteur d'activité</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class = "nav-item">
+                            <a class="nav-link" href="#"> <span style = "vertical-align: inherit;">
+                                    <span style = "vertical-align: inherit;">Offres d'emploi</span>
+                                </span>
+                            </a>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
                 </div>
             </nav>
+
+        {% block body %}
         {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
