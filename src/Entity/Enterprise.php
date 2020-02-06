@@ -149,4 +149,11 @@ class Enterprise
 
         return $this;
     }
+
+    public function setJobOffer()
+    {
+        $this->jobOffers = $jobOffer;
+
+        return $this;
+    }
 }

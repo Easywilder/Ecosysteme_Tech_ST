@@ -11,6 +11,7 @@ import '../scss/app.scss';
 const $ = require('jquery');
 
 require('bootstrap');
+require('bootswatch');
 
 $(document).ready(function() {
     $('[data-toggle="popover"]').popover();
